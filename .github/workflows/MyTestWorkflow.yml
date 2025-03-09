@@ -1,5 +1,4 @@
 name: S3 Data Ingestion
-
 on:
   workflow_dispatch:
   push:
