@@ -1,8 +1,8 @@
 name: S3 Data Ingestion
 
 on:
-  push:
-    branches: [ main ]
+  #push:
+    #branches: [ main ]
   workflow_dispatch:
 jobs:
   ingest_data:
