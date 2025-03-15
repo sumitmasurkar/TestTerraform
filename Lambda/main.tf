@@ -1,5 +1,6 @@
 provider "aws" {
   region = "ap-south-1"  # Update to your desired region
+  version = "~> 4.0"  # Example version constraint
 }
 
 # Replace with the ARN of your existing IAM role
