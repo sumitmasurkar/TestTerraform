@@ -3,6 +3,23 @@ provider "aws" {
   version = "~> 4.0"  # Example version constraint
 }
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"  # Specify a version range or exact version
+    }
+
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"  # Specify a version range or exact version
+    }
+  }
+
+  required_version = ">= 1.0"  # Optionally specify a minimum Terraform version
+}
+
+
 # Replace with the ARN of your existing IAM role
 data "aws_iam_role" "IAMRoleWithLamdaFullS3Access" {
   role_name = "LamdaFullS3Access"  # Replace with your IAM role name
