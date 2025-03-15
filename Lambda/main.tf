@@ -1,22 +1,17 @@
-provider "aws" {
-  region = "ap-south-1"  # Update to your desired region
-  version = "~> 4.0"  # Example version constraint
-}
-
 terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.0"  # Specify a version range or exact version
     }
-
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.0"  # Specify a version range or exact version
-    }
   }
-
   required_version = ">= 1.0"  # Optionally specify a minimum Terraform version
+}
+
+
+provider "aws" {
+  region = "ap-south-1"  # Update to your desired region
+  version = "~> 4.0"  # Example version constraint
 }
 
 
