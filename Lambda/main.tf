@@ -17,7 +17,7 @@ provider "aws" {
 
 # Replace with the ARN of your existing IAM role
 data "aws_iam_role" "IAMRoleWithLamdaFullS3Access" {
-  role_name = "LamdaFullS3Access"  # Replace with your IAM role name
+  name = "LamdaFullS3Access"  # Replace with your IAM role name
 }
 data "archive_file" "PythonLambdaPackage" {
   type = "zip"  
@@ -28,7 +28,7 @@ data "archive_file" "PythonLambdaPackage" {
 # Lambda Function
 resource "aws_lambda_function" "my_lambda" {
   function_name = "MyLambdaFunction"
-  role          = data.aws_iam_role.existing_lambda_role.arn  # Use the ARN of the existing role
+  role          = data.aws_iam_role.IAMRoleWithLamdaFullS3Access.arn  # Use the ARN of the existing role
   handler       = "index.handler"  # Your Lambda function entry point (adjust as needed)
   runtime       = "python3.8"     # Update this to the appropriate runtime (e.g., python3.8, etc.)
   timeout       = 300               # Timeout in seconds
