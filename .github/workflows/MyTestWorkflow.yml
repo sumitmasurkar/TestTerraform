@@ -18,9 +18,7 @@ jobs:
         aws-region: ap-south-1
     - name: Terraform Init
       run: |
-        shell: bash 
         cd Lambda/
-        shell: bash 
         terraform init
     - name: Terraform Apply
       run: terraform apply -auto-approve
