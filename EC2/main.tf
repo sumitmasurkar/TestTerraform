@@ -31,7 +31,7 @@ resource "aws_instance" "my_ec2" {
   key_name      = "mywebserver"       # The name of the key pair in AWS
 
   # Associate the security group
-  security_groups = [aws_security_group.allow_ssh.test]
+  security_groups = [aws_security_group.allow_ssh.name]
 
   # Tag the instance
   tags = {
